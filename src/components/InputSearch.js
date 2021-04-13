@@ -13,17 +13,17 @@ const InputSearch = ({handleSearch}) => {
     const handleSubmit = e => {
         e.preventDefault()
         handleSearch(value)
+        
       }
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
             onChange={handleChange}
             value={value} 
             type="text" 
             />
             <input 
-            onSubmit={handleSubmit}
             className="search" 
             type="submit" 
             value=""></input>

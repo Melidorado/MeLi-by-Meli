@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
-import Nav from './components/Nav';
-import CardsContainer from './components/CardsContainer';
+import Search from './components/Search';
 
 const App = () => {
 
@@ -23,18 +22,18 @@ const App = () => {
 
   const handleSearch = search => {
     setSearch(search)
+    setPage("search")
   }
 
   return (
     <>
-    <Home 
-    handleSearch={handleSearch}
-    />
-    <Nav
-    handleSearch={handleSearch} />
-    <CardsContainer 
-    products={products}/>
-    
+    {page === "home" 
+      ? <Home 
+        handleSearch={handleSearch}
+        />
+      : <Search 
+        handleSearch={handleSearch}
+        products={products}/>}
     </>
   );
 }

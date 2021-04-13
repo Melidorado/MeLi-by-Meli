@@ -9,6 +9,7 @@ const CardsContainer = ({products}) => {
                 image={product.thumbnail}
                 price={product.price}
                 title={product.title}
+                key={product.id}
                 />)}
         </section>
     )
