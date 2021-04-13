@@ -1,0 +1,7 @@
+section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(233, 233, 233);
+    padding-top: 20px;
+}

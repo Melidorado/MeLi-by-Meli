@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import Home from './components/Home';
+import Nav from './components/Nav';
+import CardsContainer from './components/CardsContainer';
 
-function App() {
+const App = () => {
+
+  const [ page, setPage ] = useState("home")
+  const [ search, setSearch ] = useState('')
+  const [ products, setProducts ] = useState([])
+
+  useEffect(() => {
+    const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?q='
+    
+    fetch(baseUrl + search)
+    .then (res => res.json())
+    .then (data => setProducts(data.results))
+  }, [search])
+
+  console.log(products)
+  console.log(search)
+
+  const handleSearch = search => {
+    setSearch(search)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Home 
+    handleSearch={handleSearch}
+    />
+    <Nav
+    handleSearch={handleSearch} />
+    <CardsContainer 
+    products={products}/>
+    
+    </>
   );
 }
 

@@ -1,0 +1,29 @@
+form{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+input {
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.search {
+    width: 50px;
+    background-color: #febd69;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+#search-icon {
+    width: 50px;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    cursor: pointer;
+}

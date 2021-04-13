@@ -1,0 +1,21 @@
+nav {
+    /* background-color: #232f3e; */
+    background-color: violet;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+h2 {
+    color: white;
+    margin: 20px 70px;
+}
+
+span {
+    color: #febd69;
+}
+
+.input-container {
+    width: 40%;
+}
