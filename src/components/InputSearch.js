@@ -13,8 +13,7 @@ const InputSearch = ({handleSearch}) => {
     const handleSubmit = e => {
         e.preventDefault()
         handleSearch(value)
-        
-      }
+    }
 
     return(
         <form onSubmit={handleSubmit}>

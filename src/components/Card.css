@@ -17,6 +17,7 @@ article {
     border-bottom: 1px solid #eaeaea;
     width: 100%;
     height: 60%;
+    padding-bottom: 10px;
 }
 
 img {
@@ -32,8 +33,21 @@ img {
     font-size: 20px;
 }
 
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.free-shipping {
+    color: rgb(0, 155, 0);
+    margin-right: 40px;
+}
+
 .title {
     padding-left:20px;
+    padding-right: 20px;
     font-size: 12px;
 }
 

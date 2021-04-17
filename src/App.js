@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Search from './components/Search';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -17,9 +18,6 @@ const App = () => {
     .then (data => setProducts(data.results))
   }, [search])
 
-  console.log(products)
-  console.log(search)
-
   const handleSearch = search => {
     setSearch(search)
     setPage("search")
@@ -31,9 +29,12 @@ const App = () => {
       ? <Home 
         handleSearch={handleSearch}
         />
-      : <Search 
+      : <><Search 
         handleSearch={handleSearch}
-        products={products}/>}
+        products={products}/>
+        <Footer />
+        </>}
+      
     </>
   );
 }

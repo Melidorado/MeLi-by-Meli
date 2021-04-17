@@ -1,0 +1,14 @@
+footer {
+    background-color: #232f3e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 150px;
+}
+
+.footer-info{
+    color: white;
+    margin: 5px;
+} 

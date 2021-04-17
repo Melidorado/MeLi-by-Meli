@@ -1,6 +1,12 @@
 import './Card.css';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 
-const Card = ({image, price, title}) => {
+const Card = ({image, price, title, shipping, handleDetail, product}) => {
+
+    const handleClickDetail = () => {
+        handleDetail(product)
+    }
+
     return(
         <article>
             <div className="image-container">
@@ -8,9 +14,11 @@ const Card = ({image, price, title}) => {
             </div>
             <div className="info-container">
                 <p className="price">${price}</p>
-                <p className="title">{title}</p>
+                { shipping && < LocalShippingIcon className="free-shipping"/>}
+               
             </div>
-            <button>Ver más</button>
+            <p className="title">{title}</p>
+            <button onClick={handleClickDetail}>Ver más</button>
         </article>
     )
 }
