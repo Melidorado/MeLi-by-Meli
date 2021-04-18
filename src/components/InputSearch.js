@@ -2,9 +2,10 @@ import './InputSearch.css';
 import SearchIcon from '@material-ui/icons/Search';
 import { useState } from 'react';
 
-const InputSearch = ({handleSearch}) => {
+const InputSearch = ({handleSearch, doNotShowProducts}) => {
 
     const [ value, setValue ] = useState('')
+    const doNotShow = false
 
     const handleChange = e => {
         setValue(e.target.value)
@@ -13,7 +14,10 @@ const InputSearch = ({handleSearch}) => {
     const handleSubmit = e => {
         e.preventDefault()
         handleSearch(value)
+        doNotShowProducts(doNotShow)
     }
+
+    console.log(value)
 
     return(
         <form onSubmit={handleSubmit}>

@@ -1,13 +1,15 @@
 import './Nav.css';
 import InputSearch from './InputSearch';
 
-const Nav = ({handleSearch}) => {
+const Nav = ({handleSearch, doNotShowProducts}) => {
     return(
         <nav>
             <h2>Search in <span>MeLi</span></h2>
             <div className="input-container">
             <InputSearch 
-            handleSearch={handleSearch}/>
+            handleSearch={handleSearch}
+            doNotShowProducts={doNotShowProducts}
+            />
             </div>
         </nav>
     )

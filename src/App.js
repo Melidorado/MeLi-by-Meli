@@ -23,6 +23,8 @@ const App = () => {
     setPage("search")
   }
 
+  console.log(products)
+
   return (
     <>
     {page === "home" 

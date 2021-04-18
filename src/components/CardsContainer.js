@@ -3,18 +3,19 @@ import Card from './Card';
 import { useEffect, useState } from 'react';
 import Detail from './Detail';
 
-const CardsContainer = ({products}) => {
+const CardsContainer = ({products, doNotShowProducts, cardDetail}) => {
 
-    const [ cardDetail, setCardDetail ] = useState(false)
+
     const [ productDetail, setProductDetail ] = useState({})
     const [ productDescription, setProductDescription ] = useState("")
     const [ productId, setProductId ] = useState("")
 
     const handleDetail = (productDetail) => {
-        setCardDetail(true)
+        doNotShowProducts(true)
         setProductDetail(productDetail)
         setProductId(productDetail.id)
     }
+
 
     useEffect(() => {
         productId &&
@@ -37,7 +38,7 @@ const CardsContainer = ({products}) => {
                 handleDetail={handleDetail}
                 product={product}
                 />)
-            :cardDetail && <Detail 
+            : <Detail 
             image={productDetail.thumbnail}
             title={productDetail.title}
             price={productDetail.price}
