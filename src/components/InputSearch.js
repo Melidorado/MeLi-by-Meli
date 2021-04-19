@@ -5,7 +5,6 @@ import { useState } from 'react';
 const InputSearch = ({handleSearch, doNotShowProducts}) => {
 
     const [ value, setValue ] = useState('')
-    const doNotShow = false
 
     const handleChange = e => {
         setValue(e.target.value)
@@ -14,7 +13,7 @@ const InputSearch = ({handleSearch, doNotShowProducts}) => {
     const handleSubmit = e => {
         e.preventDefault()
         handleSearch(value)
-        doNotShowProducts(doNotShow)
+        doNotShowProducts && doNotShowProducts(false)
     }
 
     console.log(value)
