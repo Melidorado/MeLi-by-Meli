@@ -21,6 +21,7 @@ const InputSearch = ({handleSearch, doNotShowProducts}) => {
     return(
         <form onSubmit={handleSubmit}>
             <input
+            className="search-by-product"
             onChange={handleChange}
             value={value} 
             type="text" 

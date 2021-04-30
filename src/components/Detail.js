@@ -1,6 +1,6 @@
 import './Detail.css';
 
-const Detail = ({image, title, price, description, condition, sold_quantity}) => {
+const Detail = ({image, title, price, description, condition, sold_quantity, productLink}) => {
 
     const toUpperCaseFirstLetter = str => {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -13,14 +13,14 @@ const Detail = ({image, title, price, description, condition, sold_quantity}) =>
                     <img src={image} className="detail-image" alt={title}/>
                 </div>
                 <div>
-                    <p>{description}</p>
+                    <p className="product-description">{description}</p>
                 </div>
             </section>
-            <aside>
+            <aside className="product-specifications">
             <span className="condition-sold">{`${toUpperCaseFirstLetter(condition)}   |   ${sold_quantity} vendidos`}</span>
             <h1 className="detail-title">{title}</h1>
             <p className="detail-price">{`$${price}`}</p>
-            <button className="buy-button">Comprar Ahora</button>
+            <button className="buy-button"><a href={productLink} target="blank" className="buy-legend">Comprar Ahora</a></button>
 
             </aside>
         </article>

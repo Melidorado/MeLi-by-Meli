@@ -2,6 +2,8 @@ import './CardsContainer.css';
 import Card from './Card';
 import { useEffect, useState } from 'react';
 import Detail from './Detail';
+import Filters from './Filters';
+import Products from './Products';
 
 const CardsContainer = ({products, doNotShowProducts, cardDetail}) => {
 
@@ -28,24 +30,22 @@ const CardsContainer = ({products, doNotShowProducts, cardDetail}) => {
         <section className="cards-details_container">
 
             {!cardDetail 
-            ?products.map( product => 
-                <Card 
-                image={product.thumbnail}
-                price={product.price}
-                title={product.title}
-                key={product.id}
-                shipping={product.shipping.free_shipping}
-                handleDetail={handleDetail}
-                product={product}
-                />)
-            : <Detail 
-            image={productDetail.thumbnail}
-            title={productDetail.title}
-            price={productDetail.price}
-            description={productDescription}
-            condition={productDetail.condition}
-            sold_quantity={productDetail.sold_quantity}
-            />}
+            ?   <>
+                    <Filters/>
+                    <Products
+                    products={products}
+                    handleDetail={handleDetail}
+                    />
+                </>
+            :   <Detail 
+                    image={productDetail.thumbnail}
+                    title={productDetail.title}
+                    price={productDetail.price}
+                    description={productDescription}
+                    condition={productDetail.condition}
+                    sold_quantity={productDetail.sold_quantity}
+                    productLink={productDetail.permalink}
+                />}
         </section>
     )
 }

@@ -3,7 +3,7 @@ form{
     display: flex;
     position: relative;
 }
-input {
+.search-by-product, .search {
     padding: 15px;
     width: 100%;
     border-radius: 10px;
